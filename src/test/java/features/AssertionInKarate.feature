@@ -43,7 +43,7 @@ Feature: Using match keyword
     * match employee.MiddleName == '#notpresent'
 
 
-  @wip
+
   Scenario: contains matching
     * def employee =
   """

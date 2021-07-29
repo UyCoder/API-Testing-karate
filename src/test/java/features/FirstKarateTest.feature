@@ -35,7 +35,7 @@ Feature: welcome to karate
     """
     * print student.salary
 
-  @wip
+
   Scenario: json array objects
     * def students =
     """

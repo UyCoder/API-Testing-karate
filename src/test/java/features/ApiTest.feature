@@ -18,7 +18,8 @@ Feature: Exchange rate api tests
     And match header Content-Type == 'application/json; Charset=UTF-8'
     And match header Connection == 'keep-alive'
     And match header Date == '#present'
-    # to verify headers we use header keyword then headerName without double or single code
-    # and === 'header value'
+    # This equals to headers().hasHeaderWithName("headername") in restAssured
 
+    # to verify headers we use header keyword then headerName without double or single code and == 'header value'
+* print '==============first video 2:14:15==================='
 

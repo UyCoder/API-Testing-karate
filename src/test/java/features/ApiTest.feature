@@ -32,6 +32,4 @@ Feature: Exchange rate api tests
    And print response.error.type == '#present'
    And print 'The Error Massage is', response.error.info ,'==========='
 
-  @wip
-Scenario:
 

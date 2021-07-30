@@ -53,5 +53,8 @@ Feature: Parameters example
     And match header Content-Type == 'application/json; charset=utf-8'
     And match header Date == '#present'
     And print response
+    And match response.results[1].name == "raichu"
 
+    # verify each results[] has name and value
+    And match each response.results[*] contains {"name":'#present'}
 

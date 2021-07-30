@@ -10,7 +10,6 @@ Feature: Exchange rate api tests
     When method GET
     Then status 200
 
-  @wip
   Scenario: header validation
     Given url 'https://api.exchangeratesapi.io/2010-01-12'
     When method GET
@@ -21,5 +20,18 @@ Feature: Exchange rate api tests
     # This equals to headers().hasHeaderWithName("headername") in restAssured
 
     # to verify headers we use header keyword then headerName without double or single code and == 'header value'
-* print '==============first video 2:14:15==================='
+
+ Scenario: json body verification
+   Given url 'https://api.exchangeratesapi.io/2010-01-12'
+   When method GET
+   Then status 200
+   And match header Content-Type == 'application/json; Charset=UTF-8'
+   And print response
+   And print response.success
+   And match response.error.code == 101
+   And print response.error.type == '#present'
+   And print 'The Error Massage is', response.error.info ,'==========='
+
+  @wip
+Scenario:
 

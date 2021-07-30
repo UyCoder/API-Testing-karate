@@ -57,4 +57,11 @@ Feature: Parameters example
 
     # verify each results[] has name and value
     And match each response.results[*] contains {"name":'#present'}
+    # second way
+    And match each response.results[*].name == '#present'
+            # each meand loop
 
+    # verify each url from results is string format
+    And match each response.results[*].url == '#string'
+
+* print "====================3:05:45=========================="

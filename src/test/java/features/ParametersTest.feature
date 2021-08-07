@@ -5,6 +5,7 @@ Feature: Parameters example
     * def baseUrl1 = 'https://api.exchangeratesapi.io'
     * def baseUrl2 = 'https://284-rpr-133.mktorest.com'
     * def baseURL3 = 'https://swapi.dev/api/people/1/'
+    * def baseURL5 = 'https://swapi.dev/api/'
     * def baseURL4 = 'https://pokeapi.co/'
 
 
@@ -64,4 +65,12 @@ Feature: Parameters example
     # verify each url from results is string format
     And match each response.results[*].url == '#string'
 
-* print "====================3:05:45=========================="
+
+    Scenario:
+      Given url baseURL5
+      Then path 'people/1'
+      When method GET
+      Then status 200
+      And print response
+      And match response.gender == 'male'
+      And match each response.films[*] == '#string'

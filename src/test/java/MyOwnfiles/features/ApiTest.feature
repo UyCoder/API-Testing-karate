@@ -32,4 +32,14 @@ Feature: Exchange rate api tests
    And print response.error.type == '#present'
    And print 'The Error Massage is', response.error.info ,'==========='
 
+  Scenario: reading java methods
+     #point the class that we want to run
+     #Java.type --> used to connect to java class
+    * def SDG = Java.type('utilities.SpartanDataGenerator')
+    * def newSpartan = SDG.createSpartan()
+     #run the static method in that class and capture the result
+     #the return map object is represented as a json
+    * print newSpartan
+
+
 
